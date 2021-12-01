@@ -1,0 +1,1 @@
+{"studentID": "000009", "name": "Jonas Thomas", "classYear": 2024, "housingType": "traditional", "discipStatus": "normal", "assignedRoom": null, "roomPicUrl": null, "queue": [{"roomID": "215", "building": "foss", "occupancy": 2, "area": 260}, {"roomID": "337", "building": "roberts", "occupancy": 2, "area": 201}, {"roomID": "075", "building": "dana", "occupancy": 2, "area": 223}]}

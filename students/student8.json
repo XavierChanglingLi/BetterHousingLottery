@@ -1,0 +1,35 @@
+{
+    "studentID": "000008",
+    "name": "Trinity Oconnell",
+    "classYear": 2022,
+    "housingType": "traditional",
+    "discipStatus": "probation",
+    "assignedRoom": null,
+    "roomPicUrl": null,
+    "queue": [
+        {
+            "roomID": "129",
+            "building": "roberts",
+            "occupancy": 2,
+            "area": 233
+        },
+        {
+            "roomID": "224",
+            "building": "dana",
+            "occupancy": 2,
+            "area": 222
+        },
+        {
+            "roomID": "004",
+            "building": "dana",
+            "occupancy": 2,
+            "area": 236
+        },
+        {
+            "roomID": "295",
+            "building": "roberts",
+            "occupancy": 2,
+            "area": 237
+        }
+    ]
+}
