@@ -1,1 +1,1 @@
-{"studentID": "000044", "name": "Omar Alvarado", "classYear": 2022, "housingType": "traditional", "discipStatus": "normal", "assignedRoom": null, "roomPicUrl": null, "queue": [{"roomID": "310", "building": "roberts", "occupancy": 2, "area": 215}, {"roomID": "342", "building": "roberts", "occupancy": 2, "area": 253}, {"roomID": "274", "building": "foss", "occupancy": 2, "area": 254}]}
+{"studentID": "000044", "name": "Omar Alvarado", "classYear": 2022, "housingType": "traditional", "discipStatus": "normal", "assignedRoom": null, "queue": []}

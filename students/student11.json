@@ -1,1 +1,1 @@
-{"studentID": "000011", "name": "Alexus Huang", "classYear": 2024, "housingType": "traditional", "discipStatus": "normal", "assignedRoom": null, "roomPicUrl": null, "queue": [{"roomID": "020", "building": "dana", "occupancy": 1, "area": 104}]}
+{"studentID": "000011", "name": "Alexus Huang", "classYear": 2025, "housingType": "traditional", "discipStatus": "normal", "assignedRoom": null, "queue": [{"building": "dana", "roomID": "002146", "roomPicUrl": null, "occupancy": 1, "area": 170}]}

@@ -1,1 +1,1 @@
-{"studentID": "000090", "name": "Ray Ward", "classYear": 2023, "housingType": "traditional", "discipStatus": "normal", "assignedRoom": null, "roomPicUrl": null, "queue": [{"roomID": "295", "building": "roberts", "occupancy": 2, "area": 237}]}
+{"studentID": "000090", "name": "Ray Ward", "classYear": 2023, "housingType": "traditional", "discipStatus": "probation", "assignedRoom": null, "queue": [{"building": "foss", "roomID": "000212", "roomPicUrl": null, "occupancy": 1, "area": 152}, {"building": "foss", "roomID": "000230", "roomPicUrl": null, "occupancy": 1, "area": 142}]}

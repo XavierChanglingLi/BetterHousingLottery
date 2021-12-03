@@ -1,1 +1,1 @@
-{"studentID": "000013", "name": "Conor Crosby", "classYear": 2025, "housingType": "traditional", "discipStatus": "normal", "assignedRoom": null, "roomPicUrl": null, "queue": [{"roomID": "301", "building": "roberts", "occupancy": 2, "area": 266}, {"roomID": "038", "building": "roberts", "occupancy": 2, "area": 235}, {"roomID": "343", "building": "dana", "occupancy": 2, "area": 249}]}
+{"studentID": "000013", "name": "Conor Crosby", "classYear": 2024, "housingType": "traditional", "discipStatus": "normal", "assignedRoom": null, "queue": []}

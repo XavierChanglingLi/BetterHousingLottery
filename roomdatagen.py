@@ -19,10 +19,17 @@ f.close()
 student_dicts = []
 room_dicts = []
 
+buildingIDs = {
+    "foss":"000",
+    "roberts":"001",
+    "dana":"002"
+}
+
 for i in range(100):
-    room_dicts.append({}) 
-    room_dicts[i]["roomID"] = str(random.randint(0,350)).zfill(3)
+    room_dicts.append({})
     room_dicts[i]["building"] = random.choice(["roberts","foss","dana"])
+    room_dicts[i]["roomID"] = buildingIDs[room_dicts[i]["building"]] + str(random.randint(0,350)).zfill(3)
+    room_dicts[i]["roomPicUrl"] = None;
     
     # handle occupancy 
     if random.random() > .6:
@@ -48,7 +55,6 @@ for i in range(100):
     else:
         student_dicts[i]["discipStatus"] = "normal"
     student_dicts[i]["assignedRoom"] = None;
-    student_dicts[i]["roomPicUrl"] = None;
 
     #randomly sample a random number of rooms from the student's desired room group type 
     same_occupancy = [x for x in room_dicts if x["occupancy"]==room_dicts[i]["occupancy"]]

@@ -1,1 +1,1 @@
-{"studentID": "000012", "name": "Tony Paul", "classYear": 2023, "housingType": "traditional", "discipStatus": "normal", "assignedRoom": null, "roomPicUrl": null, "queue": [{"roomID": "274", "building": "dana", "occupancy": 1, "area": 119}, {"roomID": "017", "building": "roberts", "occupancy": 1, "area": 123}]}
+{"studentID": "000012", "name": "Tony Paul", "classYear": 2024, "housingType": "traditional", "discipStatus": "normal", "assignedRoom": null, "queue": []}
