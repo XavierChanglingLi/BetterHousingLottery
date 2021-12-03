@@ -8,6 +8,7 @@ import os
 import sys
 import json
 import random
+import string
 
 f = open("namelist.txt")
 names = []
@@ -19,6 +20,7 @@ f.close()
 student_dicts = []
 room_dicts = []
 
+#make building IDs unique
 buildingIDs = {
     "foss":"000",
     "roberts":"001",
@@ -50,6 +52,9 @@ for i in range(100):
     student_dicts[i]["name"] = names[i]
     student_dicts[i]["classYear"] = random.choice([2022, 2023, 2024, 2025])
     student_dicts[i]["housingType"] = "traditional"
+    student_dicts[i]["email"] = names[i].replace(" ", ".") + "@colby.edu"
+    student_dicts[i]["password"] = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
+    student_dicts[i]["role"] = 0
     if random.random() > .8:
         student_dicts[i]["discipStatus"] = "probation"
     else:
@@ -63,25 +68,22 @@ for i in range(100):
         num_rooms=len(same_occupancy)
     student_dicts[i]["queue"] = random.sample(same_occupancy, k=num_rooms)
 
-if not os.path.isdir("rooms"):
-    os.mkdir("rooms")
-    os.mkdir("students")
+student_fout = open("students.json", "x")
+room_fout = open("rooms.json","x")
 
-for f in os.scandir("students"):
-    os.remove(f)
-for f in os.scandir("rooms"):
-    os.remove(f.path)
-
-
-
+student_fout.write("[")
+room_fout.write("[")
 for i in range(100):
-    student_fout = open("students/student{}.json".format(i), "x")
-    room_fout = open("rooms/room{}.json".format(i), "x")
+    student_fout.write(json.dumps(student_dicts[i]))
+    room_fout.write(json.dumps(room_dicts[i]))
+    if i<99:
+        student_fout.write(",")
+        room_fout.write(",")
     
-    json.dump(student_dicts[i], student_fout)
-    json.dump(room_dicts[i], room_fout)
-    
-    student_fout.close()
-    room_fout.close()
+student_fout.write("]")
+room_fout.write("]")
 
 
+
+student_fout.close()
+room_fout.close()
