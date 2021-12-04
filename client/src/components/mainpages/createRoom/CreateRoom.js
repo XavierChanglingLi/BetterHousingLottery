@@ -6,10 +6,10 @@ import {useHistory, useParams} from 'react-router-dom'
 
 const initialState = {
     roomID: '',
-    building: '',
     occupancy: 1,
     area: 100,
     roomPicUrl:'',
+    building: '',
     _id: ''
 }
 
@@ -93,7 +93,7 @@ function CreateRoom() {
         e.preventDefault()
         try {
             if(!isAdmin) return alert("You're not an admin")
-            if(!images) return alert("No Image Upload")
+            // if(!images) return alert("No Image Upload")
 
             if(onEdit){
                 await axios.put(`/api/rooms/${room._id}`, {...room, images}, {
@@ -116,23 +116,23 @@ function CreateRoom() {
     }
     return (
         <div className="create_room">
-            <div className="upload">
-                <input type="file" name="file" id="file_up" onChange={handleUpload}/>
-                {
-                    loading ? <div id="file_img"><Loading /></div>
+            {/*<div className="upload">*/}
+            {/*    <input type="file" name="file" id="file_up" onChange={handleUpload}/>*/}
+            {/*    {*/}
+            {/*        loading ? <div id="file_img"><Loading /></div>*/}
 
-                    :<div id="file_img" style={styleUpload}>
-                        <img src={images ? images.url : ''} alt=""/>
-                        <span onClick={handleDestroy}>X</span>
-                    </div>
-                }
-                
-            </div>
+            {/*        :<div id="file_img" style={styleUpload}>*/}
+            {/*            <img src={images ? images.url : ''} alt=""/>*/}
+            {/*            <span onClick={handleDestroy}>X</span>*/}
+            {/*        </div>*/}
+            {/*    }*/}
+            {/*    */}
+            {/*</div>*/}
 
             <form onSubmit={handleSubmit}>
                 <div className="row">
-                    <label htmlFor="room_id">Room ID</label>
-                    <input type="text" name="room_id" id="room_id" required
+                    <label htmlFor="roomID">Room ID</label>
+                    <input type="text" name="roomID" id="roomID" required
                     value={room.roomID} onChange={handleChangeInput} disabled={onEdit} />
                 </div>
 
@@ -144,7 +144,7 @@ function CreateRoom() {
 
                 <div className="row">
                     <label htmlFor="area">Area</label>
-                    <input type="number" name="are" id="area" required
+                    <input type="number" name="area" id="area" required
                     value={room.area} onChange={handleChangeInput} />
                 </div>
 

@@ -13,7 +13,7 @@ function RoomsAPI() {
 
     useEffect(() =>{
         const getRooms = async () => {
-            const res = await axios.get(`/api/buildings?limit=${page*9}&${building}&${sort}&title[regex]=${search}`)
+            const res = await axios.get(`/api/rooms?limit=${page*9}&${building}&${sort}`)
             setRooms(res.data.rooms)
             setResult(res.data.result)
         }

@@ -5,9 +5,9 @@ function Filters() {
     const state = useContext(GlobalState)
     const [buildings] = state.buildingsAPI.buildings
 
-    const [building, setBuilding] = state.buildingsAPI.building
-    const [sort, setSort] = state.buildingsAPI.sort
-    const [search, setSearch] = state.buildingsAPI.search
+    const [building, setBuilding] = state.roomsAPI.building
+    const [sort, setSort] = state.roomsAPI.sort
+    const [search, setSearch] = state.roomsAPI.search
 
 
     const handleBuilding = e => {

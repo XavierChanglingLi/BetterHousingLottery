@@ -21,6 +21,8 @@ function DetailRoom() {
 
     if(detailRoom.length === 0) return null;
 
+
+
     return (
         <>
             <div className="detail">
@@ -30,7 +32,8 @@ function DetailRoom() {
                         <h2>{detailRoom.roomID}</h2>
                         <h6>occupancy: {detailRoom.occupancy}</h6>
                     </div>
-                    <span>$ {detailRoom.area}</span>
+                    <span>{detailRoom.area}</span>
+
                     <p>{detailRoom.building}</p>
                     <Link to="/queue" className="queue"
                     onClick={() => addQueue(detailRoom)}>

@@ -38,25 +38,25 @@ button{
 
 /* ------------- Rooms -------------- */
 
-@import url("./components/mainpages/products/products.css");
+@import url("./components/mainpages/rooms/room.css");
 
 /* ---------------- Detail Product --------------- */
-@import url("./components/mainpages/detailProduct/detailProduct.css");
+@import url("./components/mainpages/detailRoom/detailRoom.css");
 
 /* ------------- Login/Register ----------------- */
 @import url("./components/mainpages/auth/login.css");
 
 /* ------------ Queue ------------------- */
-@import url("./components/mainpages/cart/cart.css");
+@import url("./components/mainpages/queue/queue.css");
 
 /* --------------- History ------------------- */
 @import url("./components/mainpages/history/history.css");
 
 /* ------------------ Buildings ------------------ */
-@import url("./components/mainpages/categories/categories.css");
+@import url("./components/mainpages/buildings/buildings.css");
 
 /* ------------------- Create Product -------------- */
-@import url("./components/mainpages/createProduct/createProduct.css");
+@import url("./components/mainpages/createRoom/createRoom.css");
 
 /* ----------------- Responsive ------------------ */
 @media (max-width: 820px){

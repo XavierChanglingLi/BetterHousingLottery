@@ -9,7 +9,7 @@ function RoomItem({room, isAdmin, deleteRoom, handleCheck}) {
                 isAdmin && <input type="checkbox" checked={room.checked}
                 onChange={() => handleCheck(room._id)} />
             }
-            <img src={room.roomPicUrl} alt="" />
+            <img src={room.roomPicUrl} width={250} height={"auto"} alt="" />
 
             <div className="room_box">
                 <h2 title={room.roomID}>{room.roomID}</h2>
@@ -17,7 +17,7 @@ function RoomItem({room, isAdmin, deleteRoom, handleCheck}) {
                 <p>{room.occupancy}</p>
             </div>
 
-            
+
             <BtnRender room={room} deleteRoom={deleteRoom} />
         </div>
     )
