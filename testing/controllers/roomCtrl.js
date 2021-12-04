@@ -50,7 +50,7 @@ const roomCtrl = {
         try {
             const features = new APIfeatures(Rooms.find(), req.query)
                 .filtering().sorting().paginating()
-
+            console.log(req.query)
             const rooms = await features.query
 
             res.json({
@@ -65,7 +65,7 @@ const roomCtrl = {
     },
     createRoom: async(req, res) =>{
         try {
-            const {roomID, building, occupancy, area, roomPicUrl} = req.body;
+            const {roomID, occupancy, area, roomPicUrl, building} = req.body;
             if(!roomPicUrl) return res.status(400).json({msg: "No image upload"})
 
             const room = await Rooms.findOne({roomID})
@@ -73,7 +73,7 @@ const roomCtrl = {
                 return res.status(400).json({msg: "This rooms already exists."})
 
             const newRoom = new Rooms({
-                roomID, building: building.toLowerCase(), occupancy, area, roomPicUrl
+               roomID:roomID.toLowerCase(), occupancy, area, roomPicUrl, building
             })
 
             await newRoom.save()
@@ -93,11 +93,11 @@ const roomCtrl = {
     },
     updateRoom: async(req, res) =>{
         try {
-            const {occupancy, area, roomPicUrl} = req.body;
+            const {occupancy, area, roomPicUrl, building} = req.body;
             if(!roomPicUrl) return res.status(400).json({msg: "No image upload"})
 
             await Rooms.findOneAndUpdate({_id: req.params.id}, {
-                occupancy, area, roomPicUrl
+                occupancy, area, roomPicUrl, building
             })
 
             res.json({msg: "Updated a Room"})

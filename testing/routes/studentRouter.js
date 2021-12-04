@@ -12,7 +12,7 @@ router.get('/refresh_token', studentCtrl.refreshToken)
 
 router.get('/infor', auth,  studentCtrl.getStudent)
 
-router.patch('/addcart', auth, studentCtrl.addQueue)
+router.patch('/addqueue', auth, studentCtrl.addQueue)
 
 router.get('/history', auth, studentCtrl.history)
 

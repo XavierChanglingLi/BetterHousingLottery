@@ -9,7 +9,8 @@ const roomSchema = new mongoose.Schema({
         required: true
     },
     building:{
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Building',
         required: true
     },
     occupancy:{
