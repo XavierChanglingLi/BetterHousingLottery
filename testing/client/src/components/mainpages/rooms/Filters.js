@@ -38,8 +38,8 @@ function Filters() {
                 <span>Sort By: </span>
                 <select value={sort} onChange={e => setSort(e.target.value)} >
                     <option value=''>Newest</option>
-                    <option value='sort=Occupancy'>Occupancy: Low-High</option>
-                    <option value='sort=-Occupancy'>Occupancy: High-Low</option>
+                    <option value='sort=occupancy'>Occupancy: Low-High</option>
+                    <option value='sort=-occupancy'>Occupancy: High-Low</option>
                     <option value='sort=-area'>Area: Large-Small</option>
                     <option value='sort=area'>Area: Small-Large</option>
                 </select>

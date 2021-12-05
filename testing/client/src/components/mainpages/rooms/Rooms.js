@@ -69,20 +69,21 @@ function Rooms() {
                 <button onClick={deleteAll}>Delete ALL</button>
             </div>
         }
-        <div className='rooms'>
+        <div className='main'>
+            <div className='pdfdisplay'>
+                <iframe className='pdf' src="floor_plan.pdf" height="1000" width="600"></iframe>
+            </div>
+            <div className='rooms'>
 
-        <div className="rooms.display">
-            {
-                rooms.map(room => {
-                    return <RoomItem key={room._id} room={room}
-                    isAdmin={isAdmin} deleteRoom={deleteRoom} handleCheck={handleCheck} />
-                })
-            } 
+                {
+                    rooms.map(room => {
+                        return <RoomItem key={room._id} room={room}
+                                         isAdmin={isAdmin} deleteRoom={deleteRoom} handleCheck={handleCheck} />
+                    })
+                }
+
+            </div>
         </div>
-
-        <iframe className='pdf' src="floor_plan.pdf" height="200" width="300"></iframe>
-        </div>
-
     
         <LoadMore />
         {rooms.length === 0 && <Loading />}
