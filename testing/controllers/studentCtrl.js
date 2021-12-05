@@ -1,5 +1,4 @@
 const Students = require('../models/studentModel')
-const Payments = require('../models/paymentModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 

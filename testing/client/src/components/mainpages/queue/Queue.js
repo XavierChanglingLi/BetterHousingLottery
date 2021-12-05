@@ -1,7 +1,6 @@
 import React, {useContext, useState, useEffect} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import axios from 'axios'
-import PaypalButton from './PaypalButton'
 
 function Queue() {
     const state = useContext(GlobalState)
@@ -28,29 +27,7 @@ function Queue() {
         })
     }
 
-
-    // const increment = (id) =>{
-    //     queue.forEach(item => {
-    //         if(item._id === id){
-    //             item.quantity += 1
-    //         }
-    //     })
-    //
-    //     setCart([...cart])
-    //     addToCart(cart)
-    // // }
-    //
-    // const decrement = (id) =>{
-    //     cart.forEach(item => {
-    //         if(item._id === id){
-    //             item.quantity === 1 ? item.quantity = 1 : item.quantity -= 1
-    //         }
-    //     })
-    //
-    //     setCart([...cart])
-    //     addToCart(cart)
-    // }
-
+ 
     const removeRoom = id =>{
         if(window.confirm("Do you want to remove this rooms?")){
             queue.forEach((item, index) => {
@@ -64,19 +41,6 @@ function Queue() {
         }
     }
 
-    const tranSuccess = async(payment) => {
-        const {paymentID, address} = payment;
-
-        await axios.post('/api/payment', {queue, paymentID, address}, {
-            headers: {Authorization: token}
-        })
-
-        setQueue([])
-        addToQueue([])
-        alert("You have successfully placed an order.")
-    }
-
-
     if(queue.length === 0)
         return <h2 style={{textAlign: "center", fontSize: "5rem"}}>Queue Empty</h2>
 
@@ -85,14 +49,14 @@ function Queue() {
             {
                 queue.map(room => (
                     <div className="detail queue" key={room._id}>
-                        <img src={room.roomPicUrl} alt="" />
+                        <img className="image" src={room.roomPicUrl}  alt="" />
 
                         <div className="box-detail">
                             <h2>{room.roomID}</h2>
 
-                            <p>area: {room.area}</p>
-                            <p>occupancy: {room.occupancy}</p>
-                            <p>building: {room.roomID.replace(/[0-9]/g,'')}</p>
+                            <p>Area: {room.area}</p>
+                            <p>Occupancy: {room.occupancy}</p>
+                            <p>Building: {room.roomID.replace(/[0-9]/g,'')}</p>
 
                             
                             <div className="delete" 

@@ -49,9 +49,6 @@ button{
 /* ------------ Queue ------------------- */
 @import url("./components/mainpages/queue/queue.css");
 
-/* --------------- History ------------------- */
-@import url("./components/mainpages/history/history.css");
-
 /* ------------------ Buildings ------------------ */
 @import url("./components/mainpages/buildings/buildings.css");
 

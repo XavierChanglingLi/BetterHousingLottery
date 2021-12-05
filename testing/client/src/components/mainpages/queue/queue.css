@@ -3,6 +3,9 @@
     border: 1px solid #ccc;
     transform: scaleY(0.98);
 }
+.image{
+    object-fit:'contain';
+}
 .amount span{
     color: crimson;
     padding: 0 20px;

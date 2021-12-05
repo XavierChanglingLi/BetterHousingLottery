@@ -4,8 +4,6 @@ import Rooms from './rooms/Rooms'
 import DetailRoom from './detailRoom/DetailRoom'
 import Login from './auth/Login'
 import Register from './auth/Register'
-import OrderHistory from './history/OrderHistory'
-import OrderDetails from './history/OrderDetails'
 import Queue from './queue/Queue'
 import NotFound from './utils/not_found/NotFound'
 import Buildings from './buildings/Buildings'
@@ -32,8 +30,7 @@ function Pages() {
             <Route path="/create_room" exact component={isAdmin ? CreateRoom : NotFound} />
             <Route path="/edit_room/:id" exact component={isAdmin ? CreateRoom : NotFound} />
 
-            <Route path="/history" exact component={isLogged ? OrderHistory : NotFound} />
-            <Route path="/history/:id" exact component={isLogged ? OrderDetails : NotFound} />
+
 
             <Route path="/queue" exact component={Queue} />
 

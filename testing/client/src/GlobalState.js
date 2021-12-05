@@ -1,7 +1,4 @@
 import React, {createContext, useState, useEffect} from 'react'
-// import ProductsAPI from './api/ProductsAPI'
-// import UserAPI from './api/UserAPI'
-// import CategoriesAPI from './api/CategoriesAPI'
 import RoomsAPI from './api/RoomsAPI'
 import StudentAPI from './api/StudentAPI'
 import BuildingsAPI from './api/BuildingsAPI'

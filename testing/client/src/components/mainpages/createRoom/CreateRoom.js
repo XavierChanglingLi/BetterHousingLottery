@@ -47,42 +47,6 @@ function CreateRoom() {
         }
     }, [param.id, rooms])
 
-    const handleUpload = async e =>{
-        e.preventDefault()
-        try {
-            if(!isAdmin) return alert("You're not an admin")
-            const file = e.target.files[0]
-            
-            if(!file) return alert("File does not exist.")
-
-            let formData = new FormData()
-            formData.append('file', file)
-
-            setLoading(true)
-            const res = await axios.post('/api/upload', formData, {
-                headers: {'content-type': 'multipart/form-data', Authorization: token}
-            })
-            setLoading(false)
-            setImages(res.data)
-
-        } catch (err) {
-            alert(err.response.data.msg)
-        }
-    }
-
-    const handleDestroy = async () => {
-        try {
-            if(!isAdmin) return alert("You're not an admin")
-            setLoading(true)
-            await axios.post('/api/destroy', {public_id: images.public_id}, {
-                headers: {Authorization: token}
-            })
-            setLoading(false)
-            setImages(false)
-        } catch (err) {
-            alert(err.response.data.msg)
-        }
-    }
 
     const handleChangeInput = e =>{
         const {name, value} = e.target
@@ -111,9 +75,7 @@ function CreateRoom() {
         }
     }
 
-    const styleUpload = {
-        display: images ? "block" : "none"
-    }
+
     return (
         <div className="create_room">
 
