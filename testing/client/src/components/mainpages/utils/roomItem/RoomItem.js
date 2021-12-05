@@ -13,8 +13,8 @@ function RoomItem({room, isAdmin, deleteRoom, handleCheck}) {
 
             <div className="room_box">
                 <h2 title={room.roomID}>{room.roomID}</h2>
-                <span>{room.area}</span>
-                <p>{room.occupancy}</p>
+                <span>Area: {room.area}</span>
+                <p>Occupancy: {room.occupancy}</p>
             </div>
 
             

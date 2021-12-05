@@ -29,12 +29,12 @@ function DetailRoom() {
                     <div className="row">
                         <h2>{detailRoom.roomID}</h2>
                     </div>
-                    <span>area:  {detailRoom.area}</span>
-                    <p>occupancy: {detailRoom.occupancy}</p>
-                    <p>building: {detailRoom.roomID.replace(/[0-9]/g,'')}</p>
+                    <span>Area: {detailRoom.area}</span>
+                    <p>Occupancy: {detailRoom.occupancy}</p>
+                    <p>Building: {detailRoom.roomID.replace(/[0-9]/g,'')}</p>
                     <Link to="/queue" className="queue"
                     onClick={() => addQueue(detailRoom)}>
-                        add to queue
+                        Add to Queue
                     </Link>
                 </div>
             </div>
