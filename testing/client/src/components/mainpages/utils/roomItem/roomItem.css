@@ -11,7 +11,7 @@
     width: 100%;
     height: 200px;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
 }
 .room_box h2{
     width: 100%;
