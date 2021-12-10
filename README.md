@@ -38,3 +38,5 @@ npm install
 cd ..
 
 npm run dev
+
+The server can be accessed on your computer locally by visiting localhost:3000 or localhost:5000 in a web browser.
