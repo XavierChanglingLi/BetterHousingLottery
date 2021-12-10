@@ -6,11 +6,11 @@ The goal of this project is to create a student housing database and webapp that
 
 Current features include:
 
--Student login/registration
--Admin login/registration
--Student view: browse, add/delete rooms from personal queue
--Admin view: browse add/delete rooms from database
--Room sorting filters: building, area (sqft), recently added
+- Student login/registration
+- Admin login/registration
+- Student view: browse, add/delete rooms from personal queue
+- Admin view: browse add/delete rooms from database
+- Room sorting filters: building, area (sqft), recently added
 
 
 # Requirements
