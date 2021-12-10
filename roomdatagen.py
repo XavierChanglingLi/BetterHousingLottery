@@ -29,6 +29,7 @@ buildingIDs = {
 
 for i in range(100):
     room_dicts.append({})
+    room_dicts[i]["checked"] = False
     room_dicts[i]["building"] = random.choice(["roberts","foss","dana"])
     room_dicts[i]["roomID"] = buildingIDs[room_dicts[i]["building"]] + str(random.randint(0,350)).zfill(3)
     room_dicts[i]["roomPicUrl"] = None;
