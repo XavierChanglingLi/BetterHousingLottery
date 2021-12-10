@@ -15,12 +15,14 @@ Current features include:
 
 # Requirements
 To generate room database with provided scripts
--Python v3.8.5
+
+- Python v3.8.5
 
 To run the demo:
--NodeJS v14.18.1
--NPM v8.1.3
--Connection to a MongoDB server 
+
+- NodeJS v14.18.1
+- NPM v8.1.3
+- Connection to a MongoDB server 
 
 # Instructions to install / run demo 
 Edit testing/.env to include your valid MongoDB connection string.
