@@ -4,7 +4,7 @@ import axios from 'axios'
 
 function Register() {
     const [student, setStudent] = useState({
-        studentID:'', name:'', classYear: '', gender: '', email:'', password:''
+        studentID:'', name:'', email:'', password:''
     })
 
     const onChangeInput = e =>{
@@ -35,12 +35,6 @@ function Register() {
 
                 <input type="text" name="name" required
                 placeholder="Name" value={student.name} onChange={onChangeInput} />
-
-                <input type="text" name="classYear" required
-                placeholder="Class Year" value={student.classYear} onChange={onChangeInput} />
-
-                <input type="text" name="gender" required
-                placeholder="Gender" value={student.gender} onChange={onChangeInput} />
 
                 <input type="email" name="email" required
                 placeholder="Email" value={student.email} onChange={onChangeInput} />

@@ -29,12 +29,9 @@ function DetailRoom() {
                     <div className="row">
                         <h2>{detailRoom.roomID}</h2>
                     </div>
-                    <p>Building: {detailRoom.roomID.replace(/[0-9]/g,'')}</p>
-                    <p>Floor: {detailRoom.floor}</p>
-                    <p>Occupancy: {detailRoom.occupancy}</p>
                     <span>Area: {detailRoom.area}</span>
-                    <p>Distance to Bathroom: {detailRoom.distToBath}</p>
-                    <p>Elevator: {detailRoom.elevator}</p>
+                    <p>Occupancy: {detailRoom.occupancy}</p>
+                    <p>Building: {detailRoom.roomID.replace(/[0-9]/g,'')}</p>
                     <Link to="/queue" className="queue"
                     onClick={() => addQueue(detailRoom)}>
                         Add to Queue

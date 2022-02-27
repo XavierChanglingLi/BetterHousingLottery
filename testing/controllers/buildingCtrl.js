@@ -14,11 +14,11 @@ const buildingCtrl = {
         try {
             // if user have role = 1 ---> admin
             // only admin can create , delete and update building
-            const {name, housingType, elevator, location} = req.body;
+            const {name} = req.body;
             const building = await Building.findOne({name})
             if(building) return res.status(400).json({msg: "This building already exists."})
 
-            const newBuilding = new Building({name, housingType, elevator, location})
+            const newBuilding = new Building({name})
 
             await newBuilding.save()
             res.json({msg: "Created a building"})
@@ -41,8 +41,8 @@ const buildingCtrl = {
     },
     updateBuilding: async(req, res) =>{
         try {
-            const {name, housingType, elevator, location} = req.body;
-            await Building.findOneAndUpdate({_id: req.params.id}, {name, housingType, elevator, location})
+            const {name} = req.body;
+            await Building.findOneAndUpdate({_id: req.params.id}, {name})
 
             res.json({msg: "Updated a building"})
         } catch (err) {

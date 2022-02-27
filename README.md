@@ -31,11 +31,13 @@ cd testing
 
 npm install
 
+cd ..
+
 cd client
 
 npm install
 
-cd ..
+cd ../testing
 
 npm run dev
 
