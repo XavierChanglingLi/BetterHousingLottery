@@ -12,7 +12,16 @@ const studentSchema = new mongoose.Schema({
     },
     classYear:{
         type:Number,
-        default: 2022
+        required: true
+    },
+    gender: {
+        type: String, 
+        required: true
+    }, 
+    specialNeeds:{
+        type: Number,
+        required: true,
+        default: 0
     },
     housingType:{
         type: String,

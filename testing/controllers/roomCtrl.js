@@ -60,7 +60,7 @@ const roomCtrl = {
     },
     createRoom: async(req, res) =>{
         try {
-            const {roomID, occupancy, area, roomPicUrl, building} = req.body;
+            const {roomID, building, occupancy, area, distToBath, elevator, floor, checked, roomPicUrl} = req.body;
             if(!roomPicUrl) return res.status(400).json({msg: "No image upload"})
 
             const room = await Rooms.findOne({roomID})
@@ -68,7 +68,7 @@ const roomCtrl = {
                 return res.status(400).json({msg: "This rooms already exists."})
 
             const newRoom = new Rooms({
-                roomID:roomID.toLowerCase(), occupancy, area, roomPicUrl, building
+                roomID:roomID.toLowerCase(), building, occupancy, area, distToBath, elevator, floor, checked, roomPicUrl
             })
 
             await newRoom.save()
@@ -88,11 +88,11 @@ const roomCtrl = {
     },
     updateRoom: async(req, res) =>{
         try {
-            const {occupancy, area, roomPicUrl,building} = req.body;
+            const {building, occupancy, area, distToBath, elevator, floor, checked, roomPicUrl} = req.body;
             if(!roomPicUrl) return res.status(400).json({msg: "No image upload"})
 
             await Rooms.findOneAndUpdate({_id: req.params.id}, {
-                occupancy, area, roomPicUrl, building
+                building, occupancy, area, distToBath, elevator, floor, checked, roomPicUrl
             })
 
             res.json({msg: "Updated a Room"})

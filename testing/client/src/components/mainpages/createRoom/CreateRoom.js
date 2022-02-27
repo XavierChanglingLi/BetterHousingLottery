@@ -6,10 +6,13 @@ import {useHistory, useParams} from 'react-router-dom'
 
 const initialState = {
     roomID: '',
+    building: '',
     occupancy: 1,
     area: 100,
+    distToBath: 0,
+    elevator: 0,
+    floor : 1,
     roomPicUrl:'',
-    building: '',
     _id: ''
 }
 
@@ -87,24 +90,6 @@ function CreateRoom() {
                 </div>
 
                 <div className="row">
-                    <label htmlFor="occupancy">Occupancy</label>
-                    <input type="number" name="occupancy" id="occupancy" required
-                    value={room.occupancy} onChange={handleChangeInput} />
-                </div>
-
-                <div className="row">
-                    <label htmlFor="area">Area</label>
-                    <input type="number" name="area" id="area" required
-                    value={room.area} onChange={handleChangeInput} />
-                </div>
-
-                <div className="row">
-                    <label htmlFor="roomPicUrl">Picture</label>
-                    <textarea type="text" name="roomPicUrl" id="roomPicUrl" required
-                    value={room.roomPicUrl} onChange={handleChangeInput} />
-                </div>
-
-                <div className="row">
                     <label htmlFor="buildings">Buildings: </label>
                     <select name="building" value={room.building} onChange={handleChangeInput} >
                         <option value="">Please select a building</option>
@@ -117,6 +102,43 @@ function CreateRoom() {
                         }
                     </select>
                 </div>
+
+                <div className="row">
+                    <label htmlFor="occupancy">Occupancy</label>
+                    <input type="number" name="occupancy" id="occupancy" required
+                    value={room.occupancy} onChange={handleChangeInput} />
+                </div>
+
+                <div className="row">
+                    <label htmlFor="area">Area</label>
+                    <input type="number" name="area" id="area" required
+                    value={room.area} onChange={handleChangeInput} />
+                </div>
+
+                <div className="row">
+                    <label htmlFor="distToBath">Distance to Bathroom</label>
+                    <input type="number" name="distToBath" id="distToBath" required
+                    value={room.distToBath} onChange={handleChangeInput} />
+                </div>
+
+                <div className="row">
+                    <label htmlFor="elevator">Elavator</label>
+                    <input type="number" name="elevator" id="elevator" required
+                    value={room.elevator} onChange={handleChangeInput} />
+                </div>
+                
+                <div className="row">
+                    <label htmlFor="floor">Floor</label>
+                    <input type="number" name="floor" id="floor" required
+                    value={room.floor} onChange={handleChangeInput} />
+                </div>
+
+                <div className="row">
+                    <label htmlFor="roomPicUrl">Picture</label>
+                    <textarea type="text" name="roomPicUrl" id="roomPicUrl" required
+                    value={room.roomPicUrl} onChange={handleChangeInput} />
+                </div>
+
 
                 <button type="submit">{onEdit? "Update" : "Create"}</button>
             </form>
