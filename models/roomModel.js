@@ -9,33 +9,18 @@ const roomSchema = new mongoose.Schema({
         required: true
     },
     building:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Building',
+        type: String,
+        trim: true,
         required: true
     },
     occupancy:{
         type: Number,
+        trim: true,
         required: true
     },
     area:{
         type: Number,
         required: true
-    },
-    distToBath:{
-        type: Number, 
-        required: true
-    },
-    elevator: {
-        type: Number,
-        required: true
-    },
-    floor: {
-        type: Number, 
-        required: true
-    },
-    checked:{
-        type: Boolean,
-        default: false
     },
     roomPicUrl:{
         type: String,

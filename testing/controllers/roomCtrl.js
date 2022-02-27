@@ -8,20 +8,16 @@ class APIfeatures {
         this.queryString = queryString;
     }
     filtering(){
-        const queryObj = {...this.queryString} //queryString = req.query
-
+        const queryObj = {...this.queryString} 
         const excludedFields = ['page', 'sort', 'limit']
         excludedFields.forEach(el => delete(queryObj[el]))
-
         let queryStr = JSON.stringify(queryObj)
         queryStr = queryStr.replace(/\b(gte|gt|lt|lte|regex)\b/g, match => '$' + match)
-
         //    gte = greater than or equal
         //    lte = lesser than or equal
         //    lt = lesser than
         //    gt = greater than
         this.query.find(JSON.parse(queryStr))
-
         return this;
     }
 
@@ -50,9 +46,8 @@ const roomCtrl = {
         try {
             const features = new APIfeatures(Rooms.find(), req.query)
                 .filtering().sorting().paginating()
-            console.log(req.query)
-            const rooms = await features.query
 
+            const rooms = await features.query
             res.json({
                 status: 'success',
                 result: rooms.length,
@@ -65,7 +60,7 @@ const roomCtrl = {
     },
     createRoom: async(req, res) =>{
         try {
-            const {roomID, occupancy, area, roomPicUrl, building} = req.body;
+            const {roomID, building, occupancy, area, distToBath, elevator, floor, checked, roomPicUrl} = req.body;
             if(!roomPicUrl) return res.status(400).json({msg: "No image upload"})
 
             const room = await Rooms.findOne({roomID})
@@ -73,11 +68,11 @@ const roomCtrl = {
                 return res.status(400).json({msg: "This rooms already exists."})
 
             const newRoom = new Rooms({
-               roomID:roomID.toLowerCase(), occupancy, area, roomPicUrl, building
+                roomID:roomID.toLowerCase(), building, occupancy, area, distToBath, elevator, floor, checked, roomPicUrl
             })
 
             await newRoom.save()
-            res.json({msg: "Created a rooms"})
+            res.json({msg: "Created a room"})
 
         } catch (err) {
             return res.status(500).json({msg: err.message})
@@ -93,11 +88,11 @@ const roomCtrl = {
     },
     updateRoom: async(req, res) =>{
         try {
-            const {occupancy, area, roomPicUrl, building} = req.body;
+            const {building, occupancy, area, distToBath, elevator, floor, checked, roomPicUrl} = req.body;
             if(!roomPicUrl) return res.status(400).json({msg: "No image upload"})
 
             await Rooms.findOneAndUpdate({_id: req.params.id}, {
-                occupancy, area, roomPicUrl, building
+                building, occupancy, area, distToBath, elevator, floor, checked, roomPicUrl
             })
 
             res.json({msg: "Updated a Room"})

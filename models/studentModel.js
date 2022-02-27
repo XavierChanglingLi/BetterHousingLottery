@@ -14,18 +14,9 @@ const studentSchema = new mongoose.Schema({
         type:Number,
         required: true
     },
-    gender: {
-        type: String, 
-        required: true
-    }, 
-    specialNeeds:{
-        type: Number,
-        required: true,
-        default: 0
-    },
     housingType:{
         type: String,
-        default: "traditional"
+        required: true
     },
     discipStatus:{
         type: String,

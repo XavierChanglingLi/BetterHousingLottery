@@ -1,12 +1,11 @@
 const Students = require('../models/studentModel')
-const Payments = require('../models/paymentModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 const studentCtrl = {
     register: async (req, res) =>{
         try {
-            const {studentID, name, email, password} = req.body;//change HTML
+            const {studentID, name, classYear, gender, email, password} = req.body;//change HTML
 
             const student = await Students.findOne({email})
             if(student) return res.status(400).json({msg: "The email already exists."})
@@ -17,7 +16,7 @@ const studentCtrl = {
             // Password Encryption
             const passwordHash = await bcrypt.hash(password, 10)
             const newStudent = new Students({
-                studentID,name, email, password: passwordHash
+                studentID, name, classYear, gender, email, password: passwordHash
             })
 
             // Save mongodb

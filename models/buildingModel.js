@@ -7,21 +7,7 @@ const buildingSchema = new mongoose.Schema({
         required: true,
         trim: true,
         unique: true
-    },
-    housingType: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    elevator: {
-        type: Number,
-        required: true
-    },
-    location: {
-        type: String,
-        required: true
     }
-
 }, {
     timestamps: true
 })

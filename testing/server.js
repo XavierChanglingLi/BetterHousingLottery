@@ -16,11 +16,9 @@ app.use(fileUpload({
 }))
 
 // Routes
-// app.use('/user', require('./routes/userRouter'))
-// app.use('/api', require('./routes/categoryRouter'))
-app.use('/api', require('./routes/upload'))
-// app.use('/api', require('./routes/productRouter'))
-app.use('/api', require('./routes/paymentRouter'))
+
+// app.use('/api', require('./routes/upload'))
+// app.use('/api', require('./routes/paymentRouter'))
 app.use('/api', require('./routes/buildingRouter'))
 app.use('/api', require('./routes/roomRouter'))
 app.use('/student', require('./routes/studentRouter'))
@@ -45,7 +43,6 @@ if(process.env.NODE_ENV === 'production'){
         res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
     })
 }
-
 
 
 
