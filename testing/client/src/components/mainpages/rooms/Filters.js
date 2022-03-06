@@ -42,6 +42,8 @@ function Filters() {
                     <option value='sort=-occupancy'>Occupancy: High-Low</option>
                     <option value='sort=-area'>Area: Large-Small</option>
                     <option value='sort=area'>Area: Small-Large</option>
+                    <option value='sort=-popularity'>Popularity: High-Low</option>
+                    <option value='sort=popularity'>Popularity: Low-High</option>
                 </select>
             </div>
         </div>

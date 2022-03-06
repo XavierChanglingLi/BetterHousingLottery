@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 
 
-function RoomsAPI() {
+function RoomsAPI(token) {
     const [rooms, setRooms] = useState([])
     const [callback, setCallback] = useState(false)
     const [building, setBuilding] = useState('')
@@ -20,6 +20,20 @@ function RoomsAPI() {
         getRooms()
     },[callback, building, sort, search, page])
 
+    const incrementPop= async (room) => {
+        const newroom = {
+            ...room,
+            popularity:room.popularity+1,
+            images:room.roomPicUrl
+        }
+        console.log(newroom) 
+        await axios.put(`/api/rooms/${room._id}`, newroom, {
+            headers: {Authorization: token}
+        })
+        console.log("incrementPop is getting called :)") 
+    }
+
+
     return {
         rooms: [rooms, setRooms],
         callback: [callback, setCallback],
@@ -27,7 +41,8 @@ function RoomsAPI() {
         sort: [sort, setSort],
         search: [search, setSearch],
         page: [page, setPage],
-        result: [result, setResult]
+        result: [result, setResult],
+        incrementPop: incrementPop
     }
 }
 

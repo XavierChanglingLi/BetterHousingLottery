@@ -57,6 +57,7 @@ function Queue() {
                             <p>Area: {room.area}</p>
                             <p>Occupancy: {room.occupancy}</p>
                             <p>Building: {room.roomID.replace(/[0-9]/g,'')}</p>
+                            <p>Popularity: {room.popularity}</p>
 
                             
                             <div className="delete" 

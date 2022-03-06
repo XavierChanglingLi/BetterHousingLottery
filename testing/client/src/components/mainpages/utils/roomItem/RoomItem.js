@@ -15,6 +15,7 @@ function RoomItem({room, isAdmin, deleteRoom, handleCheck}) {
                 <h2 title={room.roomID}>{room.roomID}</h2>
                 <span>Area: {room.area}</span>
                 <p>Occupancy: {room.occupancy}</p>
+                <p>Popularity: {room.popularity}</p>
             </div>
 
             
