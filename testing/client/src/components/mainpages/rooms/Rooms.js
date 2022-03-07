@@ -70,9 +70,6 @@ function Rooms() {
             </div>
         }
         <div className='main'>
-            <div className='pdfdisplay'>
-                <iframe className='pdf' src="floor_plan.pdf" height="1000" width="600"></iframe>
-            </div>
             <div className='rooms'>
 
                 {

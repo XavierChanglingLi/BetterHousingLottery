@@ -10,6 +10,13 @@ const initialState = {
     location:''
 }
 
+const fakeState = {
+    name:'fake',
+    housingType: 'faked',
+    elevator: 1,
+    location:''
+}
+
 function Buildings() {
     // const state = useContext(GlobalState)
     // const [building, setBuilding] = useState(initialState)
@@ -21,7 +28,7 @@ function Buildings() {
     // const [token] = state.token
 
     // const history = useHistory()
-    // const param = useParams()
+    //const param = useParams()
 
     // //const [buildings] = state.buildingsAPI.buildings
     // const [onEdit, setOnEdit] = useState(false)
@@ -143,7 +150,7 @@ function Buildings() {
     const [token] = state.token
 
     const history = useHistory()
-    const param = useParams()
+    //const param = useParams()
 
     //const [buildings] = state.buildingsAPI.buildings
     const [onEdit, setOnEdit] = useState(false)
@@ -155,6 +162,14 @@ function Buildings() {
         e.preventDefault()
         try {
             if(onEdit){
+                //setBuilding([...buildings])
+                //setBuilding(building)
+                // buildings.forEach(building=>{
+                //     if(building._id === param.id){
+                //         setBuilding(building)
+                //     }
+                // })
+                // setBuilding(fakeState)
                 const res = await axios.put(`/api/building/${id}`, {...building}, {
                     headers: {Authorization: token}
                 })
@@ -176,7 +191,7 @@ function Buildings() {
 
     const editBuilding = async(id, value) =>{
         setID(id)
-        setBuilding({...building,[name]:value})
+        setBuilding({...building, value})
         setOnEdit(true)
     }
 
@@ -196,8 +211,6 @@ function Buildings() {
             alert(err.response.data.msg)
         }
     }
-
-
 
     return (
         <div className="buildings">
@@ -223,6 +236,9 @@ function Buildings() {
                     buildings.map(building => (
                         <div className="row" key={building._id}>
                             <p>{building.name}</p>
+                            <p>{building.housingType}</p>
+                            <p>{building.elevator}</p>
+                            <p>{building.location}</p>
                             <div>
                                 <button onClick={() => editBuilding(building._id, building.name)}>Edit</button>
                                 <button onClick={() => deleteBuilding(building._id)}>Delete</button>
