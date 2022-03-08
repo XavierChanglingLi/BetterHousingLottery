@@ -26,11 +26,23 @@ function RoomsAPI(token) {
             popularity:room.popularity+1,
             images:room.roomPicUrl
         }
-        console.log(newroom) 
-        await axios.put(`/api/rooms/${room._id}`, newroom, {
+        await axios.patch(`/api/rooms/incrementpop/${room._id}`, {}, {
             headers: {Authorization: token}
         })
-        console.log("incrementPop is getting called :)") 
+    }
+    const decrementPop= async (room) => {
+        var newpop = 0
+        if (room.popularity > 0) {
+            newpop = room.popularity-1
+        }
+        const newroom = {
+            ...room,
+            popularity:newpop,
+            images:room.roomPicUrl
+        }
+        await axios.patch(`/api/rooms/decrementpop/${room._id}`, {}, {
+            headers: {Authorization: token}
+        })
     }
 
 
@@ -42,7 +54,8 @@ function RoomsAPI(token) {
         search: [search, setSearch],
         page: [page, setPage],
         result: [result, setResult],
-        incrementPop: incrementPop
+        incrementPop: incrementPop,
+        decrementPop: decrementPop
     }
 }
 

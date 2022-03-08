@@ -35,11 +35,11 @@ function StudentAPI(token) {
     const addQueue = async (room) => {
         if(!isLogged) return alert("Please login to continue")
 
-        const check = queue.every(item =>{
-            return item._id !== room._id
+        const currentRoomIds = queue.map(item =>{
+            return item._id
         })
 
-        if(check){
+        if(!currentRoomIds.includes(room._id)){
             setQueue([...queue, {...room, quantity: 1}])
 
             await axios.patch('/student/addqueue', {queue: [...queue, {...room, quantity: 1}]}, {
@@ -47,7 +47,7 @@ function StudentAPI(token) {
             })
 
         }else{
-            alert("This rooms has been added to queue.")
+            alert("This room has already been added to your queue!")
         }
     }
 

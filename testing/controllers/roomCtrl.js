@@ -78,6 +78,28 @@ const roomCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+    decrementPop: async(req, res) => {
+        try {
+            const room = await Rooms.findById(req.params.id).exec();
+            await Rooms.updateOne({_id: req.params.id}, {
+                popularity:room.popularity-1
+            })
+            res.json({msg: "Decremented Popularity"})
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
+    incrementPop: async(req, res) => {
+        try {
+            const room = await Rooms.findById(req.params.id).exec();
+            await Rooms.updateOne({_id: req.params.id}, {
+                popularity:room.popularity+1
+            })
+            res.json({msg: "Incremented Popularity"})
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
     deleteRoom: async(req, res) =>{
         try {
             await Rooms.findByIdAndDelete(req.params.id)

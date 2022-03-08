@@ -13,6 +13,9 @@ router.route('/rooms/:id')
     .delete(auth, authAdmin, roomCtrl.deleteRoom)
     .put(auth, authAdmin, roomCtrl.updateRoom)
 
+router.patch('/rooms/incrementpop/:id', auth, roomCtrl.incrementPop)
+router.patch('/rooms/decrementpop/:id', auth, roomCtrl.decrementPop)
+
 
 
 module.exports = router

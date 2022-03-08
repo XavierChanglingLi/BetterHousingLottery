@@ -91,6 +91,7 @@ const studentCtrl = {
 
     },
     getStudent: async (req, res) =>{
+        //TODO: dynamically pull rooms by ID (not entire object) for the queue.
         try {
             const student = await Students.findById(req.student.id).select('-password')
             if(!student) return res.status(400).json({msg: "Student does not exist."})
