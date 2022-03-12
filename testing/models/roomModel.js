@@ -21,6 +21,18 @@ const roomSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    distToBath:{
+        type: Number, 
+        required: true
+    },
+    elevator: {
+        type: Number,
+        required: true
+    },
+    floor: {
+        type: Number, 
+        required: true
+    },    
     checked:{
         type: Boolean,
         default: false
