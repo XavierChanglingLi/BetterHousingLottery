@@ -6,6 +6,7 @@ function BtnRender({room, deleteRoom}) {
     const state = useContext(GlobalState)
     const [isAdmin] = state.studentAPI.isAdmin
     const addQueue = state.studentAPI.addQueue
+    const incrementPop = state.roomsAPI.incrementPop
 
     
     return (
@@ -22,7 +23,11 @@ function BtnRender({room, deleteRoom}) {
                     </Link>
                 </>
                 : <>
-                    <Link id="btn_buy" to="#!" onClick={() => addQueue(room)}>
+                    <Link id="btn_buy" to="#!" 
+                    onClick={() =>{ 
+                        addQueue(room)
+                        incrementPop(room)
+                    }}>
                         Select
                     </Link>
                     <Link id="btn_view" to={`/detail/${room._id}`}>

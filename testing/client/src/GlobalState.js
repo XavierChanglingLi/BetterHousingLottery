@@ -32,7 +32,7 @@ export const DataProvider = ({children}) =>{
     
     const state = {
         token: [token, setToken],
-        roomsAPI: RoomsAPI(),
+        roomsAPI: RoomsAPI(token),
         studentAPI: StudentAPI(token),
         buildingsAPI: BuildingsAPI()
     }

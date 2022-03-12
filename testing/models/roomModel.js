@@ -28,6 +28,10 @@ const roomSchema = new mongoose.Schema({
     roomPicUrl:{
         type: String,
         required: true
+    },
+    popularity:{
+        type: Number,
+        required: true
     }
 }, {
     timestamps: true //important

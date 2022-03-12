@@ -10,6 +10,7 @@ const initialState = {
     area: 100,
     roomPicUrl:'',
     building: '',
+    popularity: 0,
     _id: ''
 }
 
@@ -96,6 +97,12 @@ function CreateRoom() {
                     <label htmlFor="area">Area</label>
                     <input type="number" name="area" id="area" required
                     value={room.area} onChange={handleChangeInput} />
+                </div>
+                
+                <div className="row">
+                    <label htmlFor="popularity">Popularity</label>
+                    <input type="number" name="popularity" id="popularity" required
+                    value={room.popularity} onChange={handleChangeInput} />
                 </div>
 
                 <div className="row">

@@ -7,6 +7,7 @@ function Queue() {
     const [queue, setQueue] = state.studentAPI.queue
     const [token] = state.token
     const [total, setTotal] = useState(0)
+    const decrementPop = state.roomsAPI.decrementPop
 
     useEffect(() =>{
         const getTotal = () =>{
@@ -57,10 +58,14 @@ function Queue() {
                             <p>Area: {room.area}</p>
                             <p>Occupancy: {room.occupancy}</p>
                             <p>Building: {room.roomID.replace(/[0-9]/g,'')}</p>
+                            <p>Popularity: {room.popularity}</p>
 
                             
                             <div className="delete" 
-                            onClick={() => removeRoom(room._id)}>
+                            onClick={() =>{ 
+                                removeRoom(room._id)
+                                decrementPop(room)
+                            }}>
                                 X
                             </div>
                         </div>

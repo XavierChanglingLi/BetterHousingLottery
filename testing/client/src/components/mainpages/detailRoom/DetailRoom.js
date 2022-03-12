@@ -9,6 +9,7 @@ function DetailRoom() {
     const state = useContext(GlobalState)
     const [rooms] = state.roomsAPI.rooms
     const addQueue = state.studentAPI.addQueue
+    const incrementPop = state.roomsAPI.incrementPop
     const [detailRoom, setDetailRoom] = useState([])
 
     useEffect(() =>{
@@ -32,8 +33,12 @@ function DetailRoom() {
                     <span>Area: {detailRoom.area}</span>
                     <p>Occupancy: {detailRoom.occupancy}</p>
                     <p>Building: {detailRoom.roomID.replace(/[0-9]/g,'')}</p>
+                    <p>Popularity: {detailRoom.popularity}</p>
                     <Link to="/queue" className="queue"
-                    onClick={() => addQueue(detailRoom)}>
+                    onClick={() =>{ 
+                        addQueue(detailRoom)
+                        incrementPop(detailRoom)
+                    }}>
                         Add to Queue
                     </Link>
                 </div>
