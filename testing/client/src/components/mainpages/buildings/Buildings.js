@@ -1,6 +1,7 @@
 import React, {useState, useContext} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import axios from 'axios'
+import { useHistory, useParams } from 'react-router-dom'
 
 function Buildings() {
     const state = useContext(GlobalState)
@@ -10,7 +11,23 @@ function Buildings() {
     const [callback, setCallback] = state.buildingsAPI.callback
     const [onEdit, setOnEdit] = useState(false)
     const [id, setID] = useState('')
+    const histore = useHistory()
+    const param = useParams()
 
+   const initialState = {
+        name:'',
+        housingType: 'traditional',
+        elevator: 1,
+        location:''
+    }
+
+    const fakeState = {
+        name:'fake',
+        housingType: 'faked',
+        elevator: 1,
+        location:''
+    } 
+    
     const createBuilding = async e =>{
         e.preventDefault()
         try {
@@ -34,9 +51,9 @@ function Buildings() {
         }
     }
 
-    const editBuilding = async (id, name) =>{
+    const editBuilding = async (id, value) =>{
         setID(id)
-        setBuilding(name)
+        setBuilding({...building,value})
         setOnEdit(true)
     }
 
@@ -67,6 +84,9 @@ function Buildings() {
                     buildings.map(building => (
                         <div className="row" key={building._id}>
                             <p>{building.name}</p>
+                            <p>{building.housingType}</p>
+                            <p>{building.elevator}</p>
+                            <p>{building.location}</p> 
                             <div>
                                 <button onClick={() => editBuilding(building._id, building.name)}>Edit</button>
                                 <button onClick={() => deleteBuilding(building._id)}>Delete</button>
