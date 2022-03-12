@@ -3,7 +3,7 @@
     margin: 0px auto 0px auto;
 }
 .rooms{
-    width:45%;
+    width:100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     justify-items: center;
