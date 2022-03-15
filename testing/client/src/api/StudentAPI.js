@@ -26,7 +26,6 @@ function StudentAPI(token) {
             axios.get('/student/queue', {
                 headers: {Authorization: token}
             }).then((res)=>{
-                console.log(res) 
                 setQueue(res.data)
             })
 

@@ -5,10 +5,8 @@ import axios from 'axios'
 function Queue() {
     const state = useContext(GlobalState)
     const [queue, setQueue] = state.studentAPI.queue
-    const getRoom = state.roomsAPI.getRoom
     const [token] = state.token
     const [total, setTotal] = useState(0)
-    // const [rooms, setRooms] = useState([])
     const decrementPop = state.roomsAPI.decrementPop
 
     useEffect(() =>{
@@ -48,9 +46,7 @@ function Queue() {
     return (
         <div>
             {
-                queue.map(room => {
-                    console.log("room:", room) 
-                    return(
+                queue.map(room => (
                     <div className="detail queue" key={room._id}>
                         <img className="image" src={room.roomPicUrl}  alt="" />
 
@@ -72,7 +68,7 @@ function Queue() {
                             </div>
                         </div>
                     </div>
-                )})
+                ))
             }
         </div>
     )
