@@ -18,12 +18,17 @@ function StudentAPI(token) {
                     setIsLogged(true)
                     res.data.role === 1 ? setIsAdmin(true) : setIsAdmin(false)
 
-                    setQueue(res.data.queue)
 
                 } catch (err) {
                     alert(err.response.data.msg)
                 }
             }
+            axios.get('/student/queue', {
+                headers: {Authorization: token}
+            }).then((res)=>{
+                console.log(res) 
+                setQueue(res.data)
+            })
 
             getStudent()
 
@@ -42,7 +47,7 @@ function StudentAPI(token) {
         if(!currentRoomIds.includes(room._id)){
             setQueue([...queue, {...room, quantity: 1}])
 
-            await axios.patch('/student/addqueue', {queue: [...queue, {...room, quantity: 1}]}, {
+            await axios.patch('/student/addqueue', {queue: [...queue, room._id]}, {
                 headers: {Authorization: token}
             })
 
