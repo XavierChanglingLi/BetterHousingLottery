@@ -16,8 +16,7 @@ function StudentAPI(token) {
                     })
 
                     setIsLogged(true)
-                    res.data.role === 1 ? setIsAdmin(true) : setIsAdmin(false)
-
+                    setIsAdmin(res.data.role === 1)
                     setQueue(res.data.queue)
 
                 } catch (err) {
