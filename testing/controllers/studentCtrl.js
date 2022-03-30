@@ -1,4 +1,5 @@
 const Students = require('../models/studentModel')
+const Rooms = require('../models/roomModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
@@ -97,6 +98,20 @@ const studentCtrl = {
             if(!student) return res.status(400).json({msg: "Student does not exist."})
 
             res.json(student)
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
+    getQueue: async (req, res) =>{
+        try {
+            const student = await Students.findById(req.student.id).select('-password')
+            if(!student) return res.status(400).json({msg: "Student does not exist."})
+
+            const queue = await Rooms.find({
+                '_id': { $in: student.queue}
+            })
+
+            res.json(queue)
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }

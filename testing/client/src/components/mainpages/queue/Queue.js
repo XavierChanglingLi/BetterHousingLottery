@@ -17,9 +17,7 @@ function Queue() {
 
             setTotal(total)
         }
-
         getTotal()
-
     },[queue])
 
     const addToQueue = async (queue) =>{

@@ -14,6 +14,8 @@ router.get('/infor', auth,  studentCtrl.getStudent)
 
 router.patch('/addqueue', auth, studentCtrl.addQueue)
 
+router.get('/queue', auth, studentCtrl.getQueue)
+
 router.get('/history', auth, studentCtrl.history)
 
 
