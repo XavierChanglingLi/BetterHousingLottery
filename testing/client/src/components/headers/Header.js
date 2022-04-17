@@ -23,6 +23,8 @@ function Header() {
     const adminRouter = () =>{
         return(
             <>
+                <li><Link to="/roomInfo">Room Info</Link></li>
+                <li><Link to="/studentInfo">Student Info</Link></li>
                 <li><Link to="/create_room">Create Room</Link></li>
                 <li><Link to="/building">Buildings</Link></li>
             </>
