@@ -127,17 +127,17 @@ function CreateRoom() {
                 </div>
                 <div className="row">
                     <label htmlFor="distToBath">Distance to Bathroom (in ft)</label>
-                    <textarea type="number" name="distToBath" id="distToBath" required
+                    <input type="number" name="distToBath" id="distToBath" required
                               value={room.distToBath} onChange={handleChangeInput} />
                 </div>
                 <div className="row">
                     <label htmlFor="elevator">Elevator</label>
-                    <textarea type="number" name="elevator" id="elevator" required
+                    <input type="number" name="elevator" id="elevator" required
                               value={room.elevator} onChange={handleChangeInput} />
                 </div>
                 <div className="row">
                     <label htmlFor="elevator">Floor</label>
-                    <textarea type="number" name="floor" id="floor" required
+                    <input type="number" name="floor" id="floor" required
                               value={room.floor} onChange={handleChangeInput} />
                 </div>
                 <button type="submit">{onEdit? "Update" : "Create"}</button>
