@@ -11,6 +11,9 @@ const initialState = {
     roomPicUrl:'',
     building: '',
     popularity: 0,
+    distToBath: 0,
+    elevator: 0,
+    floor: 1,
     _id: ''
 }
 
@@ -98,19 +101,12 @@ function CreateRoom() {
                     <input type="number" name="area" id="area" required
                     value={room.area} onChange={handleChangeInput} />
                 </div>
-                
-                <div className="row">
-                    <label htmlFor="popularity">Popularity</label>
-                    <input type="number" name="popularity" id="popularity" required
-                    value={room.popularity} onChange={handleChangeInput} />
-                </div>
 
                 <div className="row">
                     <label htmlFor="roomPicUrl">Picture</label>
                     <textarea type="text" name="roomPicUrl" id="roomPicUrl" required
-                    value={room.roomPicUrl} onChange={handleChangeInput} />
+                              value={room.roomPicUrl} onChange={handleChangeInput} />
                 </div>
-
                 <div className="row">
                     <label htmlFor="buildings">Buildings: </label>
                     <select name="building" value={room.building} onChange={handleChangeInput} >
@@ -124,7 +120,26 @@ function CreateRoom() {
                         }
                     </select>
                 </div>
-
+                <div className="row">
+                    <label htmlFor="popularity">Popularity</label>
+                    <input type="number" name="popularity" id="popularity" required
+                           value={room.popularity} onChange={handleChangeInput} />
+                </div>
+                <div className="row">
+                    <label htmlFor="distToBath">Distance to Bathroom (in ft)</label>
+                    <textarea type="number" name="distToBath" id="distToBath" required
+                              value={room.distToBath} onChange={handleChangeInput} />
+                </div>
+                <div className="row">
+                    <label htmlFor="elevator">Elevator</label>
+                    <textarea type="number" name="elevator" id="elevator" required
+                              value={room.elevator} onChange={handleChangeInput} />
+                </div>
+                <div className="row">
+                    <label htmlFor="elevator">Floor</label>
+                    <textarea type="number" name="floor" id="floor" required
+                              value={room.floor} onChange={handleChangeInput} />
+                </div>
                 <button type="submit">{onEdit? "Update" : "Create"}</button>
             </form>
         </div>
