@@ -10,9 +10,11 @@ function App() {
   return (
     <DataProvider>
       <Router>
+          <div className = "fp" style={{marginTop: "0px"}}>
+              <FloorPlan/>
+          </div>
         <div className="App">
           <Header />
-          <FloorPlan/>
           <MainPages />
         </div>
       </Router>

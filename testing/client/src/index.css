@@ -20,6 +20,11 @@ code {
   padding: 0 20px;
   box-shadow: 0 0 35px #eee;
 }
+fp{
+  left:0px;
+  max-width: 30px;
+  min-height: 100vh;
+}
 a{
   text-decoration: none;
 }

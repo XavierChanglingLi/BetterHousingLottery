@@ -11,7 +11,7 @@ function FloorPlan(){
       });
     return (
         <div style={{ marginTop: "32px" }}>
-            <div>
+            <div style={{marginTop: "30px", lineHeight: 5, padding:20}}>
                 <Item
                     onClick={() => setState({ isPaneOpenLeft: true })}>
                     Floor Plan
