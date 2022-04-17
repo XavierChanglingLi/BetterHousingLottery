@@ -2,6 +2,7 @@ import React, {createContext, useState, useEffect} from 'react'
 import RoomsAPI from './api/RoomsAPI'
 import StudentAPI from './api/StudentAPI'
 import BuildingsAPI from './api/BuildingsAPI'
+import StudentsAPI from "./api/StudentsAPI";
 
 import axios from 'axios'
 
@@ -34,7 +35,8 @@ export const DataProvider = ({children}) =>{
         token: [token, setToken],
         roomsAPI: RoomsAPI(token),
         studentAPI: StudentAPI(token),
-        buildingsAPI: BuildingsAPI()
+        buildingsAPI: BuildingsAPI(),
+        studentsAPI: StudentsAPI()
     }
 
     return (

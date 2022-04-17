@@ -8,6 +8,8 @@ import Queue from './queue/Queue'
 import NotFound from './utils/not_found/NotFound'
 import Buildings from './buildings/Buildings'
 import CreateRoom from './createRoom/CreateRoom'
+import RoomInfo from './roomInfo/RoomInfo'
+import StudentInfo from "./studentInfo/StudentInfo";
 
 import {GlobalState} from '../../GlobalState'
 
@@ -26,6 +28,8 @@ function Pages() {
             <Route path="/login" exact component={isLogged ? NotFound : Login} />
             <Route path="/register" exact component={isLogged ? NotFound : Register} />
 
+            <Route path="/roomInfo" exact component={isAdmin ? RoomInfo : NotFound} />
+            <Route path="/studentInfo" exact component={isAdmin ? StudentInfo : NotFound} />
             <Route path="/building" exact component={isAdmin ? Buildings : NotFound} />
             <Route path="/create_room" exact component={isAdmin ? CreateRoom : NotFound} />
             <Route path="/edit_room/:id" exact component={isAdmin ? CreateRoom : NotFound} />

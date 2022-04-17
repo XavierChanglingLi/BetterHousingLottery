@@ -11,7 +11,7 @@ function Buildings() {
     const [callback, setCallback] = state.buildingsAPI.callback
     const [onEdit, setOnEdit] = useState(false)
     const [id, setID] = useState('')
-    const histore = useHistory()
+    const history = useHistory()
     const param = useParams()
 
    const initialState = {

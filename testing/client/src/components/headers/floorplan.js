@@ -2,6 +2,7 @@ import React, { Component, useState } from "react";
 import { render } from "react-dom";
 import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
+import {FloatingButton, Item} from "react-floating-button";
 
 function FloorPlan(){
     const [state, setState] = useState({
@@ -11,9 +12,10 @@ function FloorPlan(){
     return (
         <div style={{ marginTop: "32px" }}>
             <div>
-                <button onClick={() => setState({ isPaneOpenLeft: true })}>
+                <Item
+                    onClick={() => setState({ isPaneOpenLeft: true })}>
                     Floor Plan
-                </button>
+                </Item>
             </div>
             <SlidingPane
             // closeIcon={<div>Some div containing custom close icon.</div>}
