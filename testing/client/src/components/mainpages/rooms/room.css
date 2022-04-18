@@ -69,6 +69,14 @@
     margin: 0 10px;
 }
 
+.reset_button {
+    width: 200;
+    height: 20; 
+    background: #00008b;
+    font-weight: 700;
+    color: white;
+}
+
 /* -------------------- Load More --------------- */
 .load_more{
     text-align: center;

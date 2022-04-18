@@ -4,7 +4,7 @@ import axios from 'axios'
 
 function Register() {
     const [student, setStudent] = useState({
-        studentID:'', name:'', email:'', password:''
+        studentID:'', name:'', gender:'', classYear:'', email:'', password:''
     })
 
     const onChangeInput = e =>{
@@ -31,10 +31,16 @@ function Register() {
             <form onSubmit={registerSubmit}>
                 <h2>Register</h2>
                 <input type="text" name="studentID" required autoComplete="on"
-                       placeholder="studentID" value={student.studentID} onChange={onChangeInput} />
+                       placeholder="StudentID" value={student.studentID} onChange={onChangeInput} />
 
                 <input type="text" name="name" required
                 placeholder="Name" value={student.name} onChange={onChangeInput} />
+                
+                <input type="text" name="gender" required 
+                placeholder="Gender" value={student.gender} onChange={onChangeInput} />
+                
+                <input type="text" name="classYear" required autoComplete="on"
+                placeholder="Class Year" value={student.classYear} onChange={onChangeInput} />
 
                 <input type="email" name="email" required
                 placeholder="Email" value={student.email} onChange={onChangeInput} />

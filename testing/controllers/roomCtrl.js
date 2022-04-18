@@ -44,6 +44,9 @@ class APIfeatures {
 const roomCtrl = {
     getRooms: async(req, res) =>{
         try {
+            // const features = new APIfeatures(Rooms.find(), { limit: '9', building: '61abb0720183d66e7ddf5f03', floor: '1', elevator: '1' })
+            //     .filtering().sorting().paginating()
+
             const features = new APIfeatures(Rooms.find(), req.query)
                 .filtering().sorting().paginating()
 
@@ -65,7 +68,7 @@ const roomCtrl = {
 
             const room = await Rooms.findOne({roomID})
             if(room)
-                return res.status(400).json({msg: "This rooms already exists."})
+                return res.status(400).json({msg: "This room already exists."})
 
             const newRoom = new Rooms({
                 roomID:roomID.toLowerCase(), occupancy, area, roomPicUrl, building, popularity, distToBath, elevator, floor, checked 

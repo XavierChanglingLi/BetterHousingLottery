@@ -34,6 +34,8 @@ function DetailRoom() {
                     <p>Occupancy: {detailRoom.occupancy}</p>
                     <p>Building: {detailRoom.roomID.replace(/[0-9]/g,'')}</p>
                     <p>Popularity: {detailRoom.popularity}</p>
+                    <p>Number of Elevators: {detailRoom.elevator}</p>
+                    <p>Distance to Bathroom: {detailRoom.distToBath}</p>
                     <Link to="/queue" className="queue"
                     onClick={() =>{ 
                         addQueue(detailRoom)

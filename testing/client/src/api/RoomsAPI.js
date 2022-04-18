@@ -5,20 +5,36 @@ import axios from 'axios'
 function RoomsAPI(token) {
     const [rooms, setRooms] = useState([])
     const [callback, setCallback] = useState(false)
-    const [building, setBuilding] = useState('')
+   
+    const [query, setQuery] = useState(
+        {
+            building:'',
+            floor:'',
+            elevator:'',
+            occupancy:''
+        }
+    )
+    // const [building, setBuilding] = useState('')
+    // const [floor, setFloor] = useState('')
+    // const [elevator, setElevator] = useState('')
+    
     const [sort, setSort] = useState('')
     const [search, setSearch] = useState('')
     const [page, setPage] = useState(1)
     const [result, setResult] = useState(0)
 
     useEffect(() =>{
+        console.log('query floor:', query.floor)
+        console.log('query building:', query.building)
+        console.log('query elevator:', query.elevator)
+        console.log('query elevator:', query.occupancy)
         const getRooms = async () => {
-            const res = await axios.get(`/api/rooms?limit=${page*9}&${building}&${sort}`)
+            const res = await axios.get(`/api/rooms?limit=${page*9}&${query.building}&${query.floor}&${query.elevator}&${query.occupancy}&${sort}`)
             setRooms(res.data.rooms)
             setResult(res.data.result)
         }
         getRooms()
-    },[callback, building, sort, search, page])
+    },[callback, query.building, query.floor, query.elevator, query.occupancy, sort, search, page])
 
     const incrementPop= async (room) => {
         await axios.patch(`/api/rooms/incrementpop/${room._id}`, {}, {
@@ -35,7 +51,10 @@ function RoomsAPI(token) {
     return {
         rooms: [rooms, setRooms],
         callback: [callback, setCallback],
-        building: [building, setBuilding],
+        // building: [building, setBuilding],
+        // floor: [floor, setFloor],
+        // elevator: [elevator, setElevator],
+        query: [query, setQuery],
         sort: [sort, setSort],
         search: [search, setSearch],
         page: [page, setPage],

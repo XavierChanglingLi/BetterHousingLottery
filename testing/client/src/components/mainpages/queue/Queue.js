@@ -28,7 +28,7 @@ function Queue() {
 
  
     const removeRoom = id =>{
-        if(window.confirm("Do you want to remove this rooms?")){
+        if(window.confirm("Do you want to remove this room?")){
             queue.forEach((item, index) => {
                 if(item._id === id){
                     queue.splice(index, 1)
@@ -57,6 +57,8 @@ function Queue() {
                             <p>Occupancy: {room.occupancy}</p>
                             <p>Building: {room.roomID.replace(/[0-9]/g,'')}</p>
                             <p>Popularity: {room.popularity}</p>
+                            <p>Number of Elevators: {room.elevator}</p>
+                            <p>Distance to Bathroom: {room.distToBath}</p>
 
                             
                             <div className="delete" 
