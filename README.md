@@ -1,6 +1,6 @@
 # BetterHousingLottery
 
-BetterHousing is a project for CS330/CS430 at Colby College, developed by Christine Roinou, Changling Li, and Benji Andrews, and Yeeun Kang
+BetterHousing is a project for CS330/CS430 at Colby College, developed by Christine Roinou, Changling Li, and Benji Andrews, and Yeeun Kang.
 
 The goal of this project is to create a student housing database and webapp that improves upon the current state of housing selection at Colby by increasing information access, ease-of-use, and adding features.
 
