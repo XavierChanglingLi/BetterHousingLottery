@@ -20,8 +20,8 @@ To generate room database with provided scripts
 
 To run the demo:
 
-- NodeJS v14.18.1
-- NPM v8.1.3
+- NodeJS v14.18.1+
+- NPM v8.1.3+
 - Connection to a MongoDB server 
 
 # Instructions to install / run demo 
@@ -31,13 +31,11 @@ cd testing
 
 npm install
 
-cd ..
-
 cd client
 
 npm install
 
-cd ../testing
+cd ..
 
 npm run dev
 
